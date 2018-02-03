@@ -1,0 +1,21 @@
+.header {
+	float: left;
+	&__title {
+		color: $color-primary-light-blue;
+		font-size: 4.5rem;
+		font-weight: normal;
+		letter-spacing: 1px;
+		text-shadow: 0 0 3.5rem $color-primary-blue;
+		margin-left: $l-size;
+		transition: all ease-in-out .3s;
+		
+
+		&:hover {
+			text-shadow: 0 0 3.5rem $color-primary-light-blue;			
+		}
+	}
+}
+
+a:link {
+	text-decoration: none;
+}

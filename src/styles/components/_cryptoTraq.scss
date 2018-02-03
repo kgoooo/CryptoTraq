@@ -1,0 +1,15 @@
+.main {
+
+	&__flex{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__arrow {
+		display: inline-block;
+		font-size: 5rem;
+		color: $color-primary-blue;
+		text-shadow: 0 0 2.5rem $color-primary-blue;
+	}
+}

@@ -1,0 +1,17 @@
+.selectForm {
+	display: inline-block;
+	margin: $l-size $l-size;
+
+
+	&__label{
+		font-weight: 300
+	}
+
+	&__form {
+		background-color: transparent;
+		border: 2px solid $color-primary-blue;
+		color: $color-primary-light-blue;
+		outline: none;
+		height: 3.2rem;
+	}
+}
