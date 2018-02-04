@@ -11,6 +11,7 @@ import Header from './Header';
 import IntlSelectForm from './IntlSelectForm';
 import SupportedCurrencies from './SupportedCurrencies';
 
+// const currencyURI = "https://api.nexchange.io/en/api/v1/currency/?format=json";
 
 class CryptoTraq extends Component {
   constructor(props) {

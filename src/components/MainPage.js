@@ -20,13 +20,18 @@ class MainPage extends Component {
     };
 	}
 	componentDidMount() {
-		CryptoAPICalls.onAppLoad()
-		// this.setState({
-    //   cryptoList: cryptoList,
-    //   intlList: intlList,
-    //   selectedCrypto: cryptoList[0].code,
-    //   selectedIntl: intlList[0].code
-    // });
+		let res = CryptoAPICalls.onAppLoad();
+		let cryptoList = res[0]
+		let intlList = res[1]
+		console.log(cryptoList);
+		console.log(typeof(cryptoList));
+		console.log(cryptoList[0]);
+		this.setState({
+      cryptoList: cryptoList,
+      intlList: intlList,
+      // selectedCrypto: cryptoList[0],
+      // selectedIntl: intlList[0].code
+    });
 	}
 	
 	render(){
