@@ -11,8 +11,6 @@ import Header from './Header';
 import IntlSelectForm from './IntlSelectForm';
 import SupportedCurrencies from './SupportedCurrencies';
 
-// const currencyURI = "https://api.nexchange.io/en/api/v1/currency/?format=json";
-
 class CryptoTraq extends Component {
   constructor(props) {
     super(props);
@@ -118,26 +116,26 @@ class CryptoTraq extends Component {
   //       }
   //     );
   // };
-  handleCryptoChange = e => {
-    console.log(e.target.value);
-    this.setState({
-      selectedCrypto: e.target.value,
-      showingExchangeRate: false,
-      showingExchangeError: false,
-      exchangeRate: 0,
-      dataSet: []
-    });
-  };
-  handleIntlChange = e => {
-    console.log(e.target.value);
-    this.setState({
-      selectedIntl: e.target.value,
-      showingExchangeRate: false,
-      showingExchangeError: false,
-      exchangeRate: 0,
-      dataSet: []
-    });
-  };
+  // handleCryptoChange = e => {
+  //   console.log(e.target.value);
+  //   this.setState({
+  //     selectedCrypto: e.target.value,
+  //     showingExchangeRate: false,
+  //     showingExchangeError: false,
+  //     exchangeRate: 0,
+  //     dataSet: []
+  //   });
+  // };
+  // handleIntlChange = e => {
+  //   console.log(e.target.value);
+  //   this.setState({
+  //     selectedIntl: e.target.value,
+  //     showingExchangeRate: false,
+  //     showingExchangeError: false,
+  //     exchangeRate: 0,
+  //     dataSet: []
+  //   });
+  // };
   
 
   render() {
@@ -145,29 +143,28 @@ class CryptoTraq extends Component {
       <div>
         <div>
           <CryptoSelectForm
-            cryptoList={this.state.cryptoList}
-            setCrypto={this.handleCryptoChange}
+            cryptoList={this.props.cryptoList}
+            setCrypto={this.props.handleCryptoChange}
           />
           <p className="main__arrow">&rarr;</p>
           <IntlSelectForm
-            intlList={this.state.intlList}
-            setIntl={this.handleIntlChange}
+            intlList={this.props.intlList}
+            setIntl={this.props.handleIntlChange}
           />
-          <CompareButton exchangeSearch={this.handleExchangeSearch} />
+          <CompareButton exchangeSearch={this.props.handleExchangeSearch} />
         </div>
-        {this.state.showingExchangeRate === true ? (
+        {this.props.showingExchangeRate === true ? (
           <ExchangeResult
-            crypto={this.state.selectedCrypto}
-            intl={this.state.selectedIntl}
-            rate={this.state.exchangeRate}
-            excError={this.state.showingExchangeError}
+            crypto={this.props.selectedCrypto}
+            intl={this.props.selectedIntl}
+            rate={this.props.exchangeRate}
+            excError={this.props.showingExchangeError}
           />
         ) : null}
         <Graph
-          cryptoData={this.state.dataSet}
-          crypto={this.state.selectedCrypto}
+          cryptoData={this.props.dataSet}
+          crypto={this.props.selectedCrypto}
         />
-        {this.state.dontShow ? null : <Currencies intl={this.state.intlList} crypto={this.state.intlList}/>}
 			</div>
     );
   }

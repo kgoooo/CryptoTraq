@@ -7,7 +7,6 @@ const onAppLoad = () => {
     //   Get request for the currently supported currencies.
 	 return axios.get(currencyURI).then(res => {
 			console.log("Currency request successful");
-			// console.log(res);
 			// Splits available currencies into crypto and international currencies.
 			res.data.forEach(currency => {
 				if (currency.is_crypto === true) {
@@ -23,7 +22,10 @@ const onAppLoad = () => {
 			console.log("Currency request unsucsessful");
 		}
 	);
+}
 
+const exchangeSearch = (crypto, intl) => {
+	const exchangeURI = `https://api.nexchange.io/en/api/v1/price/${crypto}${intl}/latest/`;
 }
 // const handleExchangeSearch = () => {
 // 	const exchangeURI = `https://api.nexchange.io/en/api/v1/price/${
@@ -84,7 +86,7 @@ const onAppLoad = () => {
 // };
 
 
-export default { onAppLoad}
+export default { onAppLoad, exchangeSearch}
 // export default { onAppLoad, handleExchangeSearch}
 
 // const onAppLoad = () => {
