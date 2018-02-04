@@ -4,10 +4,8 @@ const onAppLoad = () => {
 	const currencyURI = "https://api.nexchange.io/en/api/v1/currency/?format=json";
 	let cryptoList = [];
 	let intlList = [];
-	let currencyList = [];
     //   Get request for the currently supported currencies.
-	axios.get(currencyURI).then(
-		res => {
+	 return axios.get(currencyURI).then(res => {
 			console.log("Currency request successful");
 			// console.log(res);
 			// Splits available currencies into crypto and international currencies.
@@ -19,13 +17,13 @@ const onAppLoad = () => {
 				}
 			});
 			// Set the state with data from API request.
+			return {cryptoList, intlList};
 		},
 		err => {
 			console.log("Currency request unsucsessful");
 		}
 	);
-	currencyList.push(cryptoList, intlList)
-	return currencyList;
+
 }
 // const handleExchangeSearch = () => {
 // 	const exchangeURI = `https://api.nexchange.io/en/api/v1/price/${

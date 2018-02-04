@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CryptoTraq from './CryptoTraq';
 import CryptoAPICalls from '../api/CryptoAPICalls';
+import Currencies from './Currencies';
 
 class MainPage extends Component {
 	constructor(props) {
@@ -10,35 +11,33 @@ class MainPage extends Component {
       cryptoList: [],
       dontShow: true,
       intlList: [],
-			isDisplayingGraph: false,
       selectedCrypto: null,
       selectedIntl: null,
       showingExchangeRate: false,
-      showingExchangeError: false,
+			showingExchangeError: false,
+			showingCurrencyList: false,
       exchangeRate: 0,
       dataSet: []
     };
 	}
-	componentDidMount() {
-		let res = CryptoAPICalls.onAppLoad();
-		let cryptoList = res[0]
-		let intlList = res[1]
-		console.log(cryptoList);
-		console.log(typeof(cryptoList));
-		console.log(cryptoList[0]);
-		this.setState({
-      cryptoList: cryptoList,
-      intlList: intlList,
-      // selectedCrypto: cryptoList[0],
-      // selectedIntl: intlList[0].code
-    });
+	//might need to change back to DID mount to set the state..
+	componentWillMount() {
+		CryptoAPICalls.onAppLoad().then((res) => {
+			this.setState({
+				cryptoList: res.cryptoList,
+				intlList: res.intlList,
+				selectedCrypto: res.cryptoList[0].code,
+				selectedIntl: res.intlList[0].code
+			});
+		});
 	}
 	
 	render(){
 		return(
 			<div>
 				<h1>Main PAGE</h1>
-				</div>
+				{!this.state.showingCurrencyList ? <CryptoTraq /> : <Currencies />}
+			</div>
 			)
 		}
 	}
