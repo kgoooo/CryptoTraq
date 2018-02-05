@@ -91,6 +91,7 @@ class MainPage extends Component {
 	};
 	
 	handleShowCurrencyList = () => {
+		console.log("I was clicked");
 		this.setState({showingCurrencyList: true})
 	}
 
@@ -98,7 +99,7 @@ class MainPage extends Component {
     return (
       <div>
 				<Header 
-					showingCurrencyList={this.state.showingCurrencyList}
+					handleShowCurrencyList={this.state.handleShowCurrencyList}
 				/>
         <CryptoTraq
 					cryptoList={this.state.cryptoList}

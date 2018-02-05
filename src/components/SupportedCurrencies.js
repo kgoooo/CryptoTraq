@@ -3,14 +3,10 @@ import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-route
 
 
 const SupportedCurrencies = (props) => {
-	return (
-		<div className="supportedCurr">
-		<Link to="/currencies">
-			<button className="btn btn--light">
-				Supported currencies
-			</button>
-		</Link>	
-		</div>
-	)
+	return <div className="supportedCurr">
+      <button className="btn btn--light" onClick={props.ShowCurrencyList}>
+        Supported currencies
+      </button>
+    </div>;
 }
 export default SupportedCurrencies;

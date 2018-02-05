@@ -8,7 +8,6 @@ import Currencies from '../components/Currencies';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <Header />
       <Route path="/" component={MainPage} exact={true} />
       <Route path="/currencies" component={Currencies} />
     </div>
