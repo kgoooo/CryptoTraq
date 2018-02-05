@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
-
+import React from 'react';
 
 const SupportedCurrencies = (props) => {
 	return <div className="supportedCurr">

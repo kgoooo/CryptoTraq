@@ -8,9 +8,11 @@ const Header = (props) => {
       <div className="header">
         <h1 className="header__title">CryptoTraq</h1>
       </div>
-      <div>
-        <SupportedCurrencies onShowCurrencyList={props.handleShowCurrencyList} />
-      </div>
+      <div className="supportedCurr">
+        <button className="btn btn--light" onClick={props.handleShowCurrencyList}>
+          Supported currencies
+        </button>
+      </div>;
     </div>;
 }
 

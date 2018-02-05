@@ -35,7 +35,6 @@ class MainPage extends Component {
   handleExchangeSearch = (crypto, intl) => {
     CryptoAPICalls.exchangeSearch(this.state.selectedCrypto, this.state.selectedIntl)
 			.then(res => {
-				console.log("MainPage RES:", res);
       if (res.data.length === 1) {
 					this.setState({
 						showingExchangeRate: true,
@@ -54,7 +53,6 @@ class MainPage extends Component {
 	handleGraphPopulate = (crypto, intl) => {
 		CryptoAPICalls.graphPopulate(this.state.selectedCrypto, this.state.selectedIntl)
 		.then((res) => {
-			console.log("graph populate:", res);
 			let dailyDataSet = [];
 			res.data.forEach(d => {
 				dailyDataSet.push({
@@ -64,13 +62,10 @@ class MainPage extends Component {
 				});
 			});
 			this.setState({ dataSet: dailyDataSet });
-			// console.log("Datapoint res", res);
-			console.log(this.state.dataSet);
 		})
 	}
 	
   handleCryptoChange = e => {
-    console.log(e.target.value);
     this.setState({
       selectedCrypto: e.target.value,
       showingExchangeRate: false,
@@ -80,7 +75,6 @@ class MainPage extends Component {
     });
   };
   handleIntlChange = e => {
-    console.log(e.target.value);
     this.setState({
       selectedIntl: e.target.value,
       showingExchangeRate: false,
@@ -99,26 +93,44 @@ class MainPage extends Component {
     return (
       <div>
 				<Header 
-					handleShowCurrencyList={this.state.handleShowCurrencyList}
+					handleShowCurrencyList={this.handleShowCurrencyList}
 				/>
-        <CryptoTraq
-					cryptoList={this.state.cryptoList}
-					dataSet={this.state.dataSet}
-					exchangeRate={this.state.exchangeRate}
-					intlList={this.state.intlList}
-					selectedCrypto={this.state.selectedCrypto}
-					selectedIntl={this.state.selectedIntl}
-					showingExchangeError={this.state.showingExchangeError}
-					showingExchangeRate={this.state.showingExchangeRate}
-					handleCryptoChange={this.handleCryptoChange}
-					handleIntlChange={this.handleIntlChange}
-					handleExchangeSearch={this.handleExchangeSearch}
-        />
-      </div>
-    );
-  }
-}
-	
+				{!this.state.showingCurrencyList ? 
+					<CryptoTraq 
+						cryptoList={this.state.cryptoList}
+						dataSet={this.state.dataSet}
+						exchangeRate={this.state.exchangeRate}
+						intlList={this.state.intlList}
+						selectedCrypto={this.state.selectedCrypto}
+						selectedIntl={this.state.selectedIntl}
+						showingExchangeError={this.state.showingExchangeError}
+						showingExchangeRate={this.state.showingExchangeRate}
+						handleCryptoChange={this.handleCryptoChange}
+						handleIntlChange={this.handleIntlChange}
+						handleExchangeSearch={this.handleExchangeSearch}
+					/> : <Currencies 
+						cryptoList={this.state.cryptoList}
+						intlList={this.state.intlList}
+						/>}
+				
+					</div>
+				);
+			}
+		}
+		
+		// <CryptoTraq
+		// 	cryptoList={this.state.cryptoList}
+		// 	dataSet={this.state.dataSet}
+		// 	exchangeRate={this.state.exchangeRate}
+		// 	intlList={this.state.intlList}
+		// 	selectedCrypto={this.state.selectedCrypto}
+		// 	selectedIntl={this.state.selectedIntl}
+		// 	showingExchangeError={this.state.showingExchangeError}
+		// 	showingExchangeRate={this.state.showingExchangeRate}
+		// 	handleCryptoChange={this.handleCryptoChange}
+		// 	handleIntlChange={this.handleIntlChange}
+		// 	handleExchangeSearch={this.handleExchangeSearch}
+		// />
 	// {!this.state.showingCurrencyList ? <CryptoTraq /> : <Currencies />}
 
 	// <CryptoTraq
