@@ -32,16 +32,41 @@ class MainPage extends Component {
 	}
 	
   handleExchangeSearch = (crypto, intl) => {
-    CryptoAPICalls.exchangeSearch(
-      this.state.selectedCrypto,
-      this.state.selectedIntl
-    ).then(res => {
-      this.setState({
-        showingExchangeRate: true,
-        exchangeRate: res.data[0].ticker.ask
-      });
-    });
+    CryptoAPICalls.exchangeSearch(this.state.selectedCrypto, this.state.selectedIntl)
+			.then(res => {
+				console.log("MainPage RES:", res);
+      if (res.data.length === 1) {
+					this.setState({
+						showingExchangeRate: true,
+						exchangeRate: res.data[0].ticker.ask
+					});
+				} else {
+					this.setState({
+						showingExchangeRate: true,
+						showingExchangeError: true
+					});
+				}
+				this.handleGraphPopulate()
+			}
+    );
 	};
+	handleGraphPopulate = (crypto, intl) => {
+		CryptoAPICalls.graphPopulate(this.state.selectedCrypto, this.state.selectedIntl)
+		.then((res) => {
+			console.log("graph populate:", res);
+			let dailyDataSet = [];
+			res.data.forEach(d => {
+				dailyDataSet.push({
+					zuluTime: d.created_on,
+					unixTime: d.unix_time,
+					rate: d.ticker.bid
+				});
+			});
+			this.setState({ dataSet: dailyDataSet });
+			// console.log("Datapoint res", res);
+			console.log(this.state.dataSet);
+		})
+	}
 	
   handleCryptoChange = e => {
     console.log(e.target.value);
