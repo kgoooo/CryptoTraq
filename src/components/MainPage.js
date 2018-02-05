@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CryptoTraq from './CryptoTraq';
 import CryptoAPICalls from '../api/CryptoAPICalls';
 import Currencies from './Currencies';
+import Header from './Header';
 
 class MainPage extends Component {
   constructor(props) {
@@ -87,12 +88,18 @@ class MainPage extends Component {
       exchangeRate: 0,
       dataSet: []
     });
-  };
+	};
+	
+	handleShowCurrencyList = () => {
+		this.setState({showingCurrencyList: true})
+	}
 
   render() {
     return (
       <div>
-        <h1>Main PAGE</h1>
+				<Header 
+					showingCurrencyList={this.state.showingCurrencyList}
+				/>
         <CryptoTraq
 					cryptoList={this.state.cryptoList}
 					dataSet={this.state.dataSet}
