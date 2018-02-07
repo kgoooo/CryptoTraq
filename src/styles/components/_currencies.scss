@@ -1,0 +1,33 @@
+.currencies {
+	position: relative;
+
+	&__container {
+		// display: flex;
+		// justify-content: space-between;
+		// position: absolute;
+
+		// left: 50%;
+		// transform: translateX()(-50%);
+		// display: inline-block;
+		// margin: 3rem auto;
+
+	}
+
+	&__list {
+		border: 3px solid $color-primary-blue;
+		box-shadow: 0 0 3rem $color-primary-blue;
+		border-radius: 8px;
+		display: inline-block;
+		// float: left;
+		padding: 4.5rem 4.5rem;
+	}
+	
+	&__item {
+		color: $color-primary-light-blue;
+		font-size: 2rem;
+		font-weight: 300;
+		list-style: none;
+		margin-top: 1rem;
+		
+	}
+}

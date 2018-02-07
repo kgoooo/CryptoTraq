@@ -4,10 +4,14 @@ const Currencies = (props) => {
 	const cryptoList = props.cryptoList;
 	const intlList = props.intlList;
 	return (
-		<div>
-      <div>
-				<ul>{cryptoList.map(c => <li key={c.code}>{c.name} - {c.code}</li>)}</ul>
-        <ul>{intlList.map(i => <li key={i.code}>{i.name}</li>)}</ul>
+		<div className="currencies">
+      <div className="currencies__container">
+        <ul className="currencies__list">
+          {cryptoList.map(c => <li className="currencies__item" key={c.code}>{c.name} - {c.code}</li>)}
+        </ul>
+        <ul className="currencies__list">
+          {intlList.map(i => <li className="currencies__item" key={i.code}>{i.name}</li>)}
+        </ul>
       </div>
 		</div>
 	)

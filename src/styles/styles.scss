@@ -1,4 +1,5 @@
-@import './base/_settings.scss';
+@import './base/settings';
+@import './base/grid';
 @import './base/base';
 @import './components/cryptoTraq';
 @import './components/header';
@@ -7,4 +8,4 @@
 @import './components/selectForm';
 @import './components/exchangeResult';
 @import './components/graph';
-@import './components/currencyModal'
+@import './components/currencies'

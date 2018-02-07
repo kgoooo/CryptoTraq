@@ -83,17 +83,19 @@ class MainPage extends Component {
       dataSet: []
     });
 	};
-	
 	handleShowCurrencyList = () => {
-		console.log("I was clicked");
 		this.setState({showingCurrencyList: true})
 	}
-
+	handleHideCurrencyList = () => {
+		this.setState({showingCurrencyList: false})
+	}
+	
   render() {
     return (
       <div>
 				<Header 
 					handleShowCurrencyList={this.handleShowCurrencyList}
+					handleHideCurrencyList={this.handleHideCurrencyList}
 				/>
 				{!this.state.showingCurrencyList ? 
 					<CryptoTraq 
