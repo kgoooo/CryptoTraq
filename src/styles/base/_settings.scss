@@ -11,6 +11,10 @@ $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
 
+$grid-width: 80%;
+$gutter-vertical: 3rem;
+$gutter-horizontal: 1rem;
+
 @mixin clearfix {
 	&::after {
 		content: "";

@@ -1,16 +1,8 @@
 .currencies {
 	position: relative;
 
-	&__container {
-		// display: flex;
-		// justify-content: space-between;
-		// position: absolute;
-
-		// left: 50%;
-		// transform: translateX()(-50%);
-		// display: inline-block;
-		// margin: 3rem auto;
-
+	&--center{
+		text-align: center;
 	}
 
 	&__list {
@@ -18,8 +10,16 @@
 		box-shadow: 0 0 3rem $color-primary-blue;
 		border-radius: 8px;
 		display: inline-block;
-		// float: left;
 		padding: 4.5rem 4.5rem;
+
+		&--columns{
+			-moz-column-count: 2;
+			-moz-column-gap: 2rem;
+			-webkit-column-count: 2;
+			-webkit-column-gap: 2rem;
+			column-count: 2;
+			column-gap: 2rem;
+		}
 	}
 	
 	&__item {
@@ -27,7 +27,15 @@
 		font-size: 2rem;
 		font-weight: 300;
 		list-style: none;
-		margin-top: 1rem;
 		
+		&:not(:first-of-type){
+			margin-top: 1rem;
+		}
+	}
+
+	&__label {
+		color: $color_primary_light_blue;
+		font-weight: 300;
+		font-size: 2.4rem;
 	}
 }
