@@ -17,5 +17,11 @@
 
 	&--compare {
 		display: inline-block;
+
+		@media screen and (max-width: $query-small) {
+			display: block;
+			// text-align: center;
+			margin: 2rem 1rem;
+		}
 	}
 }

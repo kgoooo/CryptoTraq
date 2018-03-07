@@ -1,5 +1,10 @@
 .header {
 	float: left;
+
+	@media screen and (max-width: $query-small) {
+		position: relative;
+		float: none;
+	}
 	&__title {
 		color: $color-primary-light-blue;
 		font-size: 4.5rem;
@@ -10,10 +15,19 @@
 		transition: all ease-in-out .3s;
 		cursor: pointer;
 
+		@media screen and (max-width: $query-small) {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			margin-left: 0;
+		}
+
 		&:hover {
 			text-shadow: 0 0 3.5rem $color-primary-light-blue;			
 		}
 	}
+
+	
 }
 
 a:link {

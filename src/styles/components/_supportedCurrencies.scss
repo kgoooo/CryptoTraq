@@ -1,3 +1,8 @@
 .supportedCurr {
 	margin-right: $l-size;
+
+	@media screen and (max-width: $query-small) {
+		margin-right: 0;
+		text-align: center;
+	}
 }

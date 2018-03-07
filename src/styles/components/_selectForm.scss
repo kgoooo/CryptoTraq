@@ -2,6 +2,9 @@
 	display: inline-block;
 	margin: $l-size $l-size;
 
+	@media screen and (max-width: $query-small) {
+		margin: $s-size $s-size;
+	}
 
 	&__label{
 		font-weight: 300

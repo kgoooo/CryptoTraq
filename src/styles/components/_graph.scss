@@ -6,6 +6,7 @@
 	margin-right: auto;
 
 	@media screen and (max-width: $query-small){
-		width: 95%
+		width: 95%;
+		margin-bottom: 2rem;
 	}
 }

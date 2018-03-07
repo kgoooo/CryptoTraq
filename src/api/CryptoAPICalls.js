@@ -47,7 +47,7 @@ const graphPopulate = (crypto, intl) => {
 }
 
 const graphPopulateMobile24 = (crypto, intl) => {
-	const dayGraphData = `https://api.nexchange.io/en/api/v1/price/${crypto}${intl}/history/?hours=24&data_points=13`;
+	const dayGraphData = `https://api.nexchange.io/en/api/v1/price/${crypto}${intl}/history/?hours=24&data_points=15`;
 	return axios
 		.get(dayGraphData)
 		.then((res) => {
