@@ -46,4 +46,19 @@ const graphPopulate = (crypto, intl) => {
 	)
 }
 
-export default { onAppLoad, exchangeSearch, graphPopulate}
+const graphPopulateMobile24 = (crypto, intl) => {
+	const dayGraphData = `https://api.nexchange.io/en/api/v1/price/${crypto}${intl}/history/?hours=24&data_points=13`;
+	return axios
+		.get(dayGraphData)
+		.then((res) => {
+			return res;
+		}, err => console.log("Error retreiving graph data.")
+	)
+}
+
+export default {
+  onAppLoad,
+  exchangeSearch,
+  graphPopulate,
+  graphPopulateMobile24
+};

@@ -15,6 +15,10 @@ $grid-width: 80%;
 $gutter-vertical: 3rem;
 $gutter-horizontal: 1rem;
 
+
+// ##### MEDIA QUERY SIZES #####
+$query-small: 500px;
+
 @mixin clearfix {
 	&::after {
 		content: "";

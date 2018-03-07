@@ -44,10 +44,10 @@ class Graph extends Component {
 				{dataArray.length > 0 ? <div className="graph"> 
 					<Line 
 					data={data} 
-					// width={90%} 
-					// height={600}
+					width={95} 
+					height={600}
 					options={{
-						maintainAspectRatio: true,
+						maintainAspectRatio: false,
 						title: {
 							fontSize: 20,
 							fontColor: '#00FFF5',

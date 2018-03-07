@@ -4,4 +4,8 @@
 	border-radius: 8px;
 	margin-left: auto;
 	margin-right: auto;
+
+	@media screen and (max-width: $query-small){
+		width: 95%
+	}
 }

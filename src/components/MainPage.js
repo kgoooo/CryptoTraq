@@ -11,7 +11,8 @@ class MainPage extends Component {
     this.state = {
       cryptoList: [],
       dontShow: true,
-      intlList: [],
+			intlList: [],
+			isMobile: null,
       selectedCrypto: null,
       selectedIntl: null,
       showingExchangeRate: false,
@@ -29,7 +30,19 @@ class MainPage extends Component {
         selectedCrypto: res.cryptoList[0].code,
         selectedIntl: res.intlList[0].code
       });
-    });
+		});
+	}
+	componentDidMount() {
+		let width = window.innerWidth || document.body.clientWidth;
+		if (width < 500) {
+			this.setState({
+        isMobile: true
+      });
+		} else {
+			this.setState({
+        isMobile: false
+      });
+		}
 	}
 	
   handleExchangeSearch = (crypto, intl) => {
@@ -51,18 +64,34 @@ class MainPage extends Component {
     );
 	};
 	handleGraphPopulate = (crypto, intl) => {
-		CryptoAPICalls.graphPopulate(this.state.selectedCrypto, this.state.selectedIntl)
-		.then((res) => {
-			let dailyDataSet = [];
-			res.data.forEach(d => {
-				dailyDataSet.push({
-					zuluTime: d.created_on,
-					unixTime: d.unix_time,
-					rate: d.ticker.bid
+		if(this.state.isMobile){
+			CryptoAPICalls.graphPopulateMobile24(this.state.selectedCrypto, this.state.selectedIntl).then(
+        res => {
+          let dailyDataSet = [];
+          res.data.forEach(d => {
+            dailyDataSet.push({
+              zuluTime: d.created_on,
+              unixTime: d.unix_time,
+              rate: d.ticker.bid
+            });
+          });
+          this.setState({ dataSet: dailyDataSet });
+        }
+      );
+		} else if(!this.state.isMobile){
+			CryptoAPICalls.graphPopulate(this.state.selectedCrypto, this.state.selectedIntl)
+			.then((res) => {
+				let dailyDataSet = [];
+				res.data.forEach(d => {
+					dailyDataSet.push({
+						zuluTime: d.created_on,
+						unixTime: d.unix_time,
+						rate: d.ticker.bid
+					});
 				});
-			});
-			this.setState({ dataSet: dailyDataSet });
-		})
+				this.setState({ dataSet: dailyDataSet });
+			})
+		}
 	}
 	
   handleCryptoChange = e => {
