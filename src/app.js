@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import {StyleRoot} from "radium";
 import MainPage from './components/MainPage';
-import 'normalize.css/normalize.css'
-import './styles/styles.scss'		
 
-ReactDOM.render(<MainPage />, document.getElementById('app'));
+
+//  Added StyleRoot to allow Media Queries to function properly.
+
+ReactDOM.render(<StyleRoot><MainPage /></StyleRoot>, document.getElementById('app'));
 

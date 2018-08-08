@@ -1,5 +1,7 @@
 const path = require('path');
 
+// Removed CSS & SCSS support from config.
+
 module.exports = {
 	entry: './src/app.js',
 	output: {
@@ -11,13 +13,6 @@ module.exports = {
 			loader: 'babel-loader',
 			test: /\.js$/,
 			exclude: /node_modules/
-		}, {
-			test: /\.s?css$/,
-			use: [
-				'style-loader',
-				'css-loader',
-				'sass-loader'
-			]
 		}]
 	},
 	devtool: 'cheap-module-eval-source-map',

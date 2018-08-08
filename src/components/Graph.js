@@ -1,6 +1,15 @@
+/*
+		I added Radium to this component as well.  Small amount of styling is used as the actual graph generated
+		is a canvas object.  I changed some of the styling in the graph options object to make it easier
+		to understand/read for the user.  I originally did not optimize the coloring of the graph information,
+		and now its an overall better experience.
+ */
+
 import React, { Component } from 'react';
+import Radium from 'radium';
 import {Line} from 'react-chartjs-2';
 import moment from 'moment';
+import RadiumVars from '../RadiumVariables';
 
 class Graph extends Component {
 	constructor(props) {
@@ -8,26 +17,23 @@ class Graph extends Component {
 	}
 
 	render(){		
-		let zuluArray = []
-		let dataArray = []
+		let zuluArray = [];
+		let dataArray = [];
 
 		this.props.cryptoData.forEach(el => {
-			zuluArray.push(moment(el.zuluTime).format("DD-MMM HH:mm"))
+			zuluArray.push(moment(el.zuluTime).format("DD-MMM HH:mm"));
 			dataArray.push(el.rate)
 		});
-		// let banana = moment(zuluArray[0]).format("YYYY-MM-DD HH:mm")
-		// console.log("banana", banana);
 		const data = {
 			labels: zuluArray,
 			datasets: [{
-				label: 'Coin value',
+				label: 'Currency value',
 				fill: false,
 				lineTension: 0.3,
 				backgroundColor: 'rgba(75,192,192,0.4)',
 				borderColor: '#00FFF5',
 				borderCapStyle: 'butt',
 				borderJoinStyle: 'round',
-				// pointBorderColor: 'rgba(75,192,192,1)',
 				pointBackgroundColor: 'rgba(255, 255, 255, .8)',
 				pointBorderWidth: 1,
 				pointHoverRadius: 5,
@@ -41,7 +47,7 @@ class Graph extends Component {
 		};
 		return(
 			<div>
-				{dataArray.length > 0 ? <div className="graph"> 
+				{dataArray.length > 0 ? <div style={styles.graph}>
 					<Line 
 					data={data} 
 					width={95} 
@@ -56,6 +62,29 @@ class Graph extends Component {
 							display: true,
 							padding: 25,
             	text: `Value of ${this.props.crypto} over the past 24 hours.`
+						},
+						scales: {
+							yAxes: [{
+								ticks: {
+									fontColor: "#00ADB5",
+								},
+								gridLines: {
+									color: "rgba(255, 255, 255, 0.1)"
+								},
+							}],
+							xAxes: [{
+								ticks: {
+									fontColor: "#00ADB5",
+								},
+								gridLines: {
+									color: "rgba(255, 255, 255, 0.1)"
+								},
+							}]
+						},
+						legend: {
+							labels: {
+								fontColor: '#00FFF5'
+							}
 						}
 					}}
 				/> 
@@ -65,4 +94,20 @@ class Graph extends Component {
 	}
 }
 
-export default Graph;
+const styles = {
+	graph: {
+		width: '85%',
+		border: `3px solid ${RadiumVars.color.colorPrimaryBlue}`,
+		borderRadius: '8px',
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		marginBottom: '55px',
+
+		'@media (max-width: 500px)': {
+			width: '95%',
+			marginBottom: '20px'
+		}
+	}
+};
+
+export default Radium(Graph);
