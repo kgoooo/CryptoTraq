@@ -1,6 +1,11 @@
 /*  Added the new Button component.  The props are passed in for the content of the button and its
 		onClick method.
 */
+/*
+		I have updated the method that gets passed to the button here to make it toggle the view on and off.
+		Makes the UI less confusing when trying to return to the main view as before the user had to
+		click the CryptoTraq logo to go back, and it wasn't clear..
+*/
 
 import React from 'react';
 import Radium from 'radium';
@@ -11,10 +16,12 @@ const Header = (props) => {
 	return (
     <div style={styles.header__flex}>
       <div style={[styles.header]}>
-        <h1 style={styles.header__title} onClick={props.handleHideCurrencyList}>CryptoTraq</h1>
+        <h1 style={styles.header__title}>CryptoTraq</h1>
       </div>
       <div style={styles.header__button_box}>
-        <Button onClick={props.handleShowCurrencyList} buttonContent={"Supported currencies"}/>
+        <Button
+					onClick={props.handleToggleCurrencyView}
+					buttonContent={props.showingCurrencyList ? "Back to traq" : "Supported currencies"}/>
       </div>
     </div>
   )
@@ -58,7 +65,6 @@ const styles = {
 		textShadow: `0px 0px 35px ${RadiumVars.color.colorPrimaryBlue}`,
 		marginLeft: RadiumVars.spacing.largeSize,
 		transition: 'all ease-in-out .3s',
-		cursor: 'pointer',
 
 		'@media (max-width: 500px)': {
 			display: 'inline-block',

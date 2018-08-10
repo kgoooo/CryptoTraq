@@ -16,7 +16,7 @@ class Graph extends Component {
 		super(props);
 	}
 
-	render(){		
+	render(){
 		let zuluArray = [];
 		let dataArray = [];
 
@@ -47,7 +47,7 @@ class Graph extends Component {
 		};
 		return(
 			<div>
-				{dataArray.length > 0 ? <div style={styles.graph}>
+				{dataArray.length > 0 ? <div style={styles.graph} >
 					<Line 
 					data={data} 
 					width={95} 
@@ -87,7 +87,7 @@ class Graph extends Component {
 							}
 						}
 					}}
-				/> 
+				/>
 				</div>: null}
 			</div>
 		)

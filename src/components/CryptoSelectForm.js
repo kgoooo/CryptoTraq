@@ -5,7 +5,10 @@
 		---The main reason why there is still this component and the IntlSelectForm is
 		because I couldn't get the crypto.name to render conditionally while being mapped.
 */
-
+/*
+	I added the animation and delay styles which are passed in via props from
+	the CryptoTraq component.
+ */
 import React from 'react';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
@@ -13,7 +16,7 @@ import RadiumVars from '../RadiumVariables';
 
 const CryptoSelectForm = (props) =>{
 	return (
-		<select style={styles.selectForm__form}>
+		<select style={[styles.selectForm__form, props.delay, props.anim]}>
 			{props.list.map(crypto => (
 				<option key={crypto.code} value={crypto.code}>{crypto.name} – {crypto.code}</option>
 			))}
@@ -32,7 +35,7 @@ const styles = {
 		fontSize: 'inherit',
 		height: '32px',
 		outline: 'none',
-	},
+	}
 };
 
 
