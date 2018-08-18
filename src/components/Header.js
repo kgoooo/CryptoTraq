@@ -8,6 +8,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import Button from './Button';
 import RadiumVars from '../RadiumVariables';
@@ -25,6 +26,11 @@ const Header = (props) => {
       </div>
     </div>
   )
+};
+
+Header.propTypes = {
+	handleToggleCurrencyView: PropTypes.func.isRequired,
+	showingCurrencyList: PropTypes.bool.isRequired
 };
 
 //  Added Radium to the component.
@@ -85,3 +91,4 @@ const styles = {
 };
 
 export default Radium(Header);
+export { Header }

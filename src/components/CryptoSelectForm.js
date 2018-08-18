@@ -10,6 +10,7 @@
 	the CryptoTraq component.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -22,6 +23,12 @@ const CryptoSelectForm = (props) =>{
 			))}
 		</select>
 	)
+};
+
+CryptoSelectForm.propTypes = {
+	list: PropTypes.array.isRequired,
+	delay: PropTypes.object,
+	anim: PropTypes.object
 };
 
 // Radium styles
@@ -40,3 +47,4 @@ const styles = {
 
 
 export default Radium(CryptoSelectForm);
+export { CryptoSelectForm }

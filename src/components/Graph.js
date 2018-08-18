@@ -6,6 +6,7 @@
  */
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 import Radium from 'radium';
 import {Line} from 'react-chartjs-2';
 import moment from 'moment';
@@ -94,6 +95,11 @@ class Graph extends Component {
 	}
 }
 
+Graph.propTypes = {
+	cryptoData: PropTypes.array.isRequired,
+	crypto: PropTypes.string
+};
+
 const styles = {
 	graph: {
 		width: '85%',
@@ -111,3 +117,4 @@ const styles = {
 };
 
 export default Radium(Graph);
+export {Graph};

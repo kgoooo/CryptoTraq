@@ -6,6 +6,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium'
 import {BarLoader} from 'react-spinners';
 import RadiumVars from '../RadiumVariables';
@@ -23,6 +24,11 @@ const LoadingSpinner = (props) => {
 	)
 };
 
+LoadingSpinner.propTypes = {
+	loading: PropTypes.bool.isRequired,
+	content: PropTypes.string
+};
+
 const styles = {
 	loading__spinner: {
 		display: 'block',
@@ -34,3 +40,4 @@ const styles = {
 };
 
 export default Radium(LoadingSpinner);
+export { LoadingSpinner };

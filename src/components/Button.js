@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -21,6 +22,12 @@ const Button = (props) => {
 			style={[styles.btn__main, props.buttonAnimation]}
 		>{props.buttonContent}</button>
 	)
+};
+
+Button.propTypes = {
+	onClick: PropTypes.func.isRequired,
+	buttonContent: PropTypes.string.isRequired,
+	buttonAnimation: PropTypes.object
 };
 
 /*  Button styles for Radium defined here and added below to the component on the export statement. */

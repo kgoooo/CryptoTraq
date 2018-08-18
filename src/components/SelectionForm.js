@@ -4,6 +4,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -16,6 +17,12 @@ const SelectionForm = (props) => {
 			</form>
 		</div>
 	)
+};
+
+SelectionForm.propTypes = {
+	formLabel: PropTypes.string.isRequired,
+	selectionFunc: PropTypes.func.isRequired,
+	selectForm: PropTypes.element.isRequired
 };
 
 //  Radium styles
@@ -35,3 +42,4 @@ const styles = {
 };
 
 export default Radium(SelectionForm);
+export { SelectionForm };

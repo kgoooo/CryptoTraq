@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> Should render Header correctly 1`] = `
+<div
+  style={
+    Object {
+      "@media (max-width: 500px)": Object {
+        "display": "block",
+        "marginBottom": "20px",
+      },
+      "alignItems": "center",
+      "display": "flex",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <div
+    style={
+      Array [
+        Object {
+          "@media (max-width: 500px)": Object {
+            "color": "red",
+            "float": "none",
+            "position": "relative",
+          },
+          "float": "left",
+        },
+      ]
+    }
+  >
+    <h1
+      style={
+        Object {
+          ":hover": Object {
+            "textShadow": "0px 0px 35px #00FFF5",
+          },
+          "@media (max-width: 500px)": Object {
+            "display": "inline-block",
+            "marginLeft": "0px",
+            "textAlign": "center",
+            "width": "100%",
+          },
+          "color": "#00FFF5",
+          "fontSize": "4.5rem",
+          "fontWeight": "normal",
+          "letterSpacing": "1px",
+          "marginLeft": "32px",
+          "textShadow": "0px 0px 35px #00ADB5",
+          "transition": "all ease-in-out .3s",
+        }
+      }
+    >
+      CryptoTraq
+    </h1>
+  </div>
+  <div
+    style={
+      Object {
+        "@media (max-width: 500px)": Object {
+          "marginRight": "0px",
+          "textAlign": "center",
+        },
+        "marginRight": "32px",
+      }
+    }
+  >
+    <Button
+      buttonContent="Supported currencies"
+      onClick={[MockFunction]}
+    />
+  </div>
+</div>
+`;
