@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Graph /> Should render component correctly 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "@media (max-width: 500px)": Object {
+          "marginBottom": "20px",
+          "width": "95%",
+        },
+        "border": "3px solid #00ADB5",
+        "borderRadius": "8px",
+        "marginBottom": "55px",
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "width": "85%",
+      }
+    }
+  >
+    <Line
+      data={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": "rgba(75,192,192,0.4)",
+              "borderCapStyle": "butt",
+              "borderColor": "#00FFF5",
+              "borderJoinStyle": "round",
+              "data": Array [
+                623,
+                627,
+                629,
+                632,
+              ],
+              "fill": false,
+              "label": "Currency value",
+              "lineTension": 0.3,
+              "pointBackgroundColor": "rgba(255, 255, 255, .8)",
+              "pointBorderWidth": 1,
+              "pointHitRadius": 10,
+              "pointHoverBackgroundColor": "rgba(75,192,192,1)",
+              "pointHoverBorderColor": "rgba(220,220,220,1)",
+              "pointHoverBorderWidth": 2,
+              "pointHoverRadius": 5,
+              "pointRadius": 1,
+            },
+          ],
+          "labels": Array [
+            "16-Aug 21:43",
+            "16-Aug 18:42",
+            "16-Aug 19:12",
+            "16-Aug 19:42",
+          ],
+        }
+      }
+      height={600}
+      options={
+        Object {
+          "legend": Object {
+            "labels": Object {
+              "fontColor": "#00FFF5",
+            },
+          },
+          "maintainAspectRatio": false,
+          "scales": Object {
+            "xAxes": Array [
+              Object {
+                "gridLines": Object {
+                  "color": "rgba(255, 255, 255, 0.1)",
+                },
+                "ticks": Object {
+                  "fontColor": "#00ADB5",
+                },
+              },
+            ],
+            "yAxes": Array [
+              Object {
+                "gridLines": Object {
+                  "color": "rgba(255, 255, 255, 0.1)",
+                },
+                "ticks": Object {
+                  "fontColor": "#00ADB5",
+                },
+              },
+            ],
+          },
+          "title": Object {
+            "display": true,
+            "fontColor": "#00FFF5",
+            "fontFamily": "'Roboto', sans-serif",
+            "fontSize": 20,
+            "fontStyle": "normal",
+            "padding": 25,
+            "text": "Value of undefined over the past 24 hours.",
+          },
+        }
+      }
+      width={95}
+    />
+  </div>
+</div>
+`;

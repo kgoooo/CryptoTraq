@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IntlSelectForm /> Should render correctly 1`] = `
+<select
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#222831",
+        "border": "2px solid #00ADB5",
+        "borderRadius": "8px",
+        "color": "#00FFF5",
+        "fontSize": "inherit",
+        "height": "32px",
+        "outline": "none",
+      },
+      undefined,
+      undefined,
+    ]
+  }
+>
+  <option
+    key="BTC"
+    value="BTC"
+  >
+    BTC
+  </option>
+  <option
+    key="ETH"
+    value="ETH"
+  >
+    ETH
+  </option>
+  <option
+    key="DOGE"
+    value="DOGE"
+  >
+    DOGE
+  </option>
+</select>
+`;

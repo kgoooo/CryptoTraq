@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -38,6 +39,11 @@ const Currencies = (props) => {
       </div>
     </div>
 	)
+};
+
+Currencies.propTypes = {
+	cryptoList: PropTypes.array.isRequired,
+	intlList: PropTypes.array.isRequired
 };
 
 //  Radium Styles
@@ -92,3 +98,4 @@ const styles = {
 };
 
 export default Radium(Currencies);
+export {Currencies};

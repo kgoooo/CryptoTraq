@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingSpinner /> should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "block",
+      "margin": "30px auto 0 auto",
+    }
+  }
+>
+  <onlyUpdateForKeys(Loader)
+    color="#00FFF5"
+    height={4}
+    heightUnit="px"
+    loaderStyle={
+      Object {
+        "display": "block",
+        "margin": "0 auto",
+      }
+    }
+    loading={true}
+    width={100}
+    widthUnit="px"
+  />
+  <p
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Test Spinner
+  </p>
+</div>
+`;
+
+exports[`<LoadingSpinner /> should render no spinner if loading FALSE 1`] = `
+<div
+  style={
+    Object {
+      "display": "block",
+      "margin": "30px auto 0 auto",
+    }
+  }
+>
+  <onlyUpdateForKeys(Loader)
+    color="#00FFF5"
+    height={4}
+    heightUnit="px"
+    loaderStyle={
+      Object {
+        "display": "block",
+        "margin": "0 auto",
+      }
+    }
+    loading={false}
+    width={100}
+    widthUnit="px"
+  />
+  <p
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    Test Spinner
+  </p>
+</div>
+`;

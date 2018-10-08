@@ -66,10 +66,11 @@ class MainPage extends Component {
   	this.setState({ loading: true });
     CryptoAPICalls.exchangeSearch(this.state.selectedCrypto, this.state.selectedIntl)
 			.then(res => {
-      if (res.data.length === 1) {
+      	const exchangeRate = parseFloat(res.data[0].ticker.ask)
+				if (res.data.length === 1) {
 					this.setState({
 						showingExchangeRate: true,
-						exchangeRate: res.data[0].ticker.ask,
+						exchangeRate,
 						loading: false
 					});
 				} else {

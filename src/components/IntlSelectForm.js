@@ -8,6 +8,7 @@
 	via props from the CryptoTrack component.
  */
 import React from 'react';
+import PropTypes from 'prop-types'
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -19,6 +20,12 @@ const IntlSelectForm = props => {
 					))}
 				</select>
 	)
+};
+
+IntlSelectForm.propTypes = {
+	list: PropTypes.array.isRequired,
+	delay: PropTypes.object,
+	anim: PropTypes.object
 };
 
 //  Radium styles
@@ -35,3 +42,4 @@ const styles = {
 };
 
 export default Radium(IntlSelectForm);
+export { IntlSelectForm }

@@ -13,6 +13,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import Button from './Button';
 import SelectionForm from './SelectionForm';
@@ -64,6 +65,22 @@ const CryptoTraq = (props) => {
         />
 			</div>
   )
+};
+
+CryptoTraq.propTypes = {
+	cryptoList: PropTypes.array.isRequired,
+	dataSet: PropTypes.array.isRequired,
+	exchangeRate: PropTypes.number.isRequired,
+	initializing: PropTypes.bool.isRequired,
+	intlList: PropTypes.array.isRequired,
+	loading: PropTypes.bool.isRequired,
+	selectedCrypto: PropTypes.string,
+	selectedIntl: PropTypes.string,
+	showingExchangeError: PropTypes.bool.isRequired,
+	showingExchangeRate: PropTypes.bool.isRequired,
+	handleCryptoChange: PropTypes.func.isRequired,
+	handleIntlChange: PropTypes.func.isRequired,
+	handleExchangeSearch: PropTypes.func.isRequired,
 };
 
 //  Radium Styles
