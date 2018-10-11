@@ -22,6 +22,7 @@ import IntlSelectForm from './IntlSelectForm';
 import ExchangeResult from './ExchangeResult';
 import LoadingSpinner from './LoadingSpinner';
 import Graph from './Graph';
+import GraphOptionsBar from './GraphOptionsBar';
 import RadiumVars from '../RadiumVariables';
 
 const CryptoTraq = (props) => {
@@ -41,6 +42,9 @@ const CryptoTraq = (props) => {
 					/>
           <Button onClick={props.handleExchangeSearch} buttonContent={"Track currency"} buttonAnimation={styles.trackAnim}/>
         </div>
+				<div>
+					<GraphOptionsBar handleRangeZeroChange={props.handleRangeZeroChange} rangeContent={props.rangeContent}/>
+				</div>
 				{props.initializing ?
 					<LoadingSpinner
 						loading={props.initializing}
@@ -62,6 +66,7 @@ const CryptoTraq = (props) => {
         <Graph
           cryptoData={props.dataSet}
           crypto={props.selectedCrypto}
+					rangeZero={props.rangeZero}
         />
 			</div>
   )
@@ -74,6 +79,8 @@ CryptoTraq.propTypes = {
 	initializing: PropTypes.bool.isRequired,
 	intlList: PropTypes.array.isRequired,
 	loading: PropTypes.bool.isRequired,
+	rangeContent: PropTypes.string.isRequired,
+	rangeZero: PropTypes.bool.isRequired,
 	selectedCrypto: PropTypes.string,
 	selectedIntl: PropTypes.string,
 	showingExchangeError: PropTypes.bool.isRequired,
