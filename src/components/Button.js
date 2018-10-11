@@ -5,19 +5,29 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
 /*  Stateless Button components, the button content and methods get passed through props now.  Before each
 		button was configured manually.
 */
+/*
+		Added the animation style for the button, passed in through props.
+ */
 const Button = (props) => {
 	return (
 		<button
 			onClick={props.onClick}
-			style={styles.btn__main}
+			style={[styles.btn__main, props.buttonAnimation]}
 		>{props.buttonContent}</button>
 	)
+};
+
+Button.propTypes = {
+	onClick: PropTypes.func.isRequired,
+	buttonContent: PropTypes.string.isRequired,
+	buttonAnimation: PropTypes.object
 };
 
 /*  Button styles for Radium defined here and added below to the component on the export statement. */

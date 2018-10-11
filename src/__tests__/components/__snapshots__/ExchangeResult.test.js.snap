@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExchangeResult /> Should render correctly 1`] = `
+<div>
+  <h3
+    style={
+      Object {
+        "@media (max-width: 500px)": Object {
+          "padding": "20px",
+          "textAlign": "center",
+        },
+        "color": "#00FFF5",
+        "fontSize": "24px",
+        "fontWeight": "300",
+        "marginBottom": "30px",
+        "textAlign": "center",
+      }
+    }
+  >
+    The exchange rate per 
+    BTC
+     is 
+    <span
+      style={
+        Object {
+          "fontWeight": "500",
+        }
+      }
+    >
+      76
+    </span>
+     
+    USD
+  </h3>
+</div>
+`;

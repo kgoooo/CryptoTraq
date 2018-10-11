@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> Snapshot: should render Button correctly 1`] = `
+<button
+  data-radium={true}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={
+    Object {
+      "background": "transparent",
+      "border": "2px solid #00FFF5",
+      "borderRadius": "8px",
+      "color": "#00FFF5",
+      "fontSize": "inherit",
+      "fontWeight": "300",
+      "padding": ".5rem 2.5rem",
+      "transition": "all ease-in-out .3s",
+    }
+  }
+/>
+`;

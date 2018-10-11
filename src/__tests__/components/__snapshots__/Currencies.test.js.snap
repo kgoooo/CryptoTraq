@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Currencies /> should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "position": "relative",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "@media (max-width: 750px)": Object {
+          "gridTemplateColumns": "350px",
+        },
+        "display": "grid",
+        "gridColumnGap": "50px",
+        "gridTemplateColumns": "350px 350px",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#00FFF5",
+              "fontSize": "24px",
+              "fontWeight": "300",
+            }
+          }
+        >
+          Cryptocurrencies
+        </p>
+        <ul
+          style={
+            Object {
+              "border": "3px solid #00ADB5",
+              "borderRadius": "8px",
+              "boxShadow": "0px 0px 30px #00ADB5",
+              "display": "grid",
+              "margin": "0px auto",
+              "padding": "25px 45px",
+              "textAlign": "left",
+              "width": "225px",
+            }
+          }
+        >
+          <li
+            key="BTC"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          >
+            Bitcoin
+             - 
+            BTC
+          </li>
+          <li
+            key="ETH"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          >
+            Ethereum
+             - 
+            ETH
+          </li>
+          <li
+            key="DOGE"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          >
+            Doge
+             - 
+            DOGE
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      style={Object {}}
+    >
+      <div
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <p
+          style={
+            Object {
+              "color": "#00FFF5",
+              "fontSize": "24px",
+              "fontWeight": "300",
+            }
+          }
+        >
+          International currencies
+        </p>
+        <ul
+          style={
+            Array [
+              Object {
+                "border": "3px solid #00ADB5",
+                "borderRadius": "8px",
+                "boxShadow": "0px 0px 30px #00ADB5",
+                "display": "grid",
+                "margin": "0px auto",
+                "padding": "25px 45px",
+                "textAlign": "left",
+                "width": "225px",
+              },
+              Object {
+                "display": "grid",
+                "gridColumnGap": "35px",
+                "gridTemplateColumns": "45px 45px",
+                "width": "125px",
+              },
+            ]
+          }
+        >
+          <li
+            key="USD"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          />
+          <li
+            key="CAD"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          />
+          <li
+            key="EUR"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          />
+          <li
+            key="GBP"
+            style={
+              Object {
+                "color": "#00FFF5",
+                "fontSize": "20px",
+                "fontWeight": "300",
+                "listStyle": "none",
+                "marginTop": "10px",
+              }
+            }
+          />
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

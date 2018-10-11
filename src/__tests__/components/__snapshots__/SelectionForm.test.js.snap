@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectionForm /> Should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "@media (max-width: 500px)": Object {
+        "margin": "12px 12px",
+      },
+      "display": "inline-block",
+      "margin": "32px 32px",
+    }
+  }
+>
+  <p
+    style={
+      Object {
+        "fontWeight": "300",
+      }
+    }
+  >
+    Selection Text
+  </p>
+  <form
+    onChange={[MockFunction]}
+  >
+    <CryptoSelectForm
+      list={
+        Array [
+          Object {
+            "code": "BTC",
+            "name": "Bitcoin",
+          },
+          Object {
+            "code": "ETH",
+            "name": "Ethereum",
+          },
+          Object {
+            "code": "DOGE",
+            "name": "Doge",
+          },
+        ]
+      }
+    />
+  </form>
+</div>
+`;
+
+exports[`<SelectionForm /> Snapshot: Should render correctly with CryptoSelectForm 1`] = `
+<div
+  style={
+    Object {
+      "@media (max-width: 500px)": Object {
+        "margin": "12px 12px",
+      },
+      "display": "inline-block",
+      "margin": "32px 32px",
+    }
+  }
+>
+  <p
+    style={
+      Object {
+        "fontWeight": "300",
+      }
+    }
+  >
+    Selection Text
+  </p>
+  <form
+    onChange={[MockFunction]}
+  >
+    <CryptoSelectForm
+      list={
+        Array [
+          Object {
+            "code": "BTC",
+            "name": "Bitcoin",
+          },
+          Object {
+            "code": "ETH",
+            "name": "Ethereum",
+          },
+          Object {
+            "code": "DOGE",
+            "name": "Doge",
+          },
+        ]
+      }
+    />
+  </form>
+</div>
+`;
+
+exports[`<SelectionForm /> Snapshot: Should render correctly with IntlSelectForm 1`] = `
+<div
+  style={
+    Object {
+      "@media (max-width: 500px)": Object {
+        "margin": "12px 12px",
+      },
+      "display": "inline-block",
+      "margin": "32px 32px",
+    }
+  }
+>
+  <p
+    style={
+      Object {
+        "fontWeight": "300",
+      }
+    }
+  >
+    Selection Text
+  </p>
+  <form
+    onChange={[MockFunction]}
+  >
+    <IntlSelectForm
+      list={
+        Array [
+          Object {
+            "code": "USD",
+          },
+          Object {
+            "code": "CAD",
+          },
+          Object {
+            "code": "EUR",
+          },
+          Object {
+            "code": "GBP",
+          },
+        ]
+      }
+    />
+  </form>
+</div>
+`;

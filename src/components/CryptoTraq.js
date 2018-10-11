@@ -6,14 +6,21 @@
 		and changing the props that are passed in accordingly.
 		Button component is also used here now instead of CompareButton.
  */
+/*
+	I added two loading spinner components to be rendered here.  One will show up when the app
+	is initializing, especially if the user is on a slower connection.  The second will show
+	when the user has tracked currencies and is waiting for the results.
+ */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import Radium from 'radium';
 import Button from './Button';
 import SelectionForm from './SelectionForm';
 import CryptoSelectForm from './CryptoSelectForm';
 import IntlSelectForm from './IntlSelectForm';
 import ExchangeResult from './ExchangeResult';
+import LoadingSpinner from './LoadingSpinner';
 import Graph from './Graph';
 import RadiumVars from '../RadiumVariables';
 
@@ -24,16 +31,26 @@ const CryptoTraq = (props) => {
           <SelectionForm
               formLabel={"Select Cryptocurency:"}
               selectionFunc={props.handleCryptoChange}
-              selectForm={<CryptoSelectForm list={props.cryptoList}/>}
+              selectForm={<CryptoSelectForm list={props.cryptoList} delay={styles.delay1} anim={styles.select__glow}/>}
           />
           <p style={styles.arrow}>&rarr;</p>
           <SelectionForm
             formLabel={"Select international currency:"}
             selectionFunc={props.handleIntlChange}
-						selectForm={<IntlSelectForm list={props.intlList}/>}
+						selectForm={<IntlSelectForm list={props.intlList} delay={styles.delay2} anim={styles.select__glow}/>}
 					/>
-          <Button onClick={props.handleExchangeSearch} buttonContent={"Track currency"}/>
+          <Button onClick={props.handleExchangeSearch} buttonContent={"Track currency"} buttonAnimation={styles.trackAnim}/>
         </div>
+				{props.initializing ?
+					<LoadingSpinner
+						loading={props.initializing}
+						content={"Loading currencies"}
+					/> : null}
+				{props.loading ?
+					<LoadingSpinner
+						loading={props.loading}
+						content={'Fetching your results, please hold on.'}
+					/>: null}
         {props.showingExchangeRate === true ? (
           <ExchangeResult
             crypto={props.selectedCrypto}
@@ -50,7 +67,41 @@ const CryptoTraq = (props) => {
   )
 };
 
+CryptoTraq.propTypes = {
+	cryptoList: PropTypes.array.isRequired,
+	dataSet: PropTypes.array.isRequired,
+	exchangeRate: PropTypes.number.isRequired,
+	initializing: PropTypes.bool.isRequired,
+	intlList: PropTypes.array.isRequired,
+	loading: PropTypes.bool.isRequired,
+	selectedCrypto: PropTypes.string,
+	selectedIntl: PropTypes.string,
+	showingExchangeError: PropTypes.bool.isRequired,
+	showingExchangeRate: PropTypes.bool.isRequired,
+	handleCryptoChange: PropTypes.func.isRequired,
+	handleIntlChange: PropTypes.func.isRequired,
+	handleExchangeSearch: PropTypes.func.isRequired,
+};
+
 //  Radium Styles
+/*
+		Added selectGlowAnim to add a small animation to the selection element to indicate to the user
+		that they should take action there first.  Applied with select__glow
+		I added this trackBtnAnimation to add a small scale animation to the track button as the
+		3rd step to tracking your conversion rate.  It gets passed in as props and set in the button component
+ */
+
+const selectGlowAnim = Radium.keyframes({
+	'50%': {boxShadow: `0 0 3px 6px ${RadiumVars.color.colorPrimaryLightBlue}`},
+});
+const trackBtnAnimation = Radium.keyframes({
+	'0': {transform: 'scale(1)'},
+	'50%': {
+		transform: 'scale(1.1)',
+		boxShadow: `0 0 3px 6px ${RadiumVars.color.colorPrimaryLightBlue}`
+	},
+	'100%': {transform: 'scale(1)'}
+}, 'track');
 
 const styles = {
 	arrow: {
@@ -62,7 +113,18 @@ const styles = {
 		'@media (max-width: 500px)': {
 			margin: '0px'
 		}
-	}
+	},
+	select__glow: {
+		animationName: selectGlowAnim,
+		animationDuration: '1.5s',
+	},
+	trackAnim: {
+		animationName: trackBtnAnimation,
+		animationDuration: '1.5s',
+		animationDelay: '3.5s'
+	},
+	delay1: { animationDelay: '0.85s' },
+	delay2: { animationDelay: '2.35s'}
 };
 
 export default Radium(CryptoTraq);

@@ -3,19 +3,29 @@
 		components to make them more reusable.  This now gets passed into Selection form
 		to render the proper content for the select form elements.
 */
-
+/*
+	I have added the delay and animation styles to this component, which are passed in
+	via props from the CryptoTrack component.
+ */
 import React from 'react';
+import PropTypes from 'prop-types'
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
 const IntlSelectForm = props => {
 	return (
-				<select style={styles.selectForm__form}>
+				<select style={[styles.selectForm__form, props.delay, props.anim]}>
 					{props.list.map(intl => (
 						<option key={intl.code} value={intl.code}>{intl.code}</option>
 					))}
 				</select>
 	)
+};
+
+IntlSelectForm.propTypes = {
+	list: PropTypes.array.isRequired,
+	delay: PropTypes.object,
+	anim: PropTypes.object
 };
 
 //  Radium styles
@@ -32,3 +42,4 @@ const styles = {
 };
 
 export default Radium(IntlSelectForm);
+export { IntlSelectForm }

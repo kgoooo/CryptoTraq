@@ -3,6 +3,7 @@ Added Radium to this component, nothing else changed.
  */
 
 import React from 'react';
+import PropTypes from 'prop-types'
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
@@ -19,6 +20,13 @@ const ExchangeResult = (props) => {
 			{showRate}
 		</div>
 	)
+};
+
+ExchangeResult.propTypes = {
+	crypto: PropTypes.string.isRequired,
+	intl: PropTypes.string.isRequired,
+	rate: PropTypes.number.isRequired,
+	excError: PropTypes.bool.isRequired
 };
 
 //  Radium Styles below
@@ -42,3 +50,4 @@ const styles = {
 };
 
 export default Radium(ExchangeResult);
+export { ExchangeResult }
