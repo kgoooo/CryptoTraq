@@ -21,6 +21,8 @@ class MainPage extends Component {
 			intlList: [],
 			isMobile: null,
 			loading: false,
+			rangeZero: false,
+			rangeContent: "Show Range starting at 0",
       selectedCrypto: null,
       selectedIntl: null,
       showingExchangeRate: false,
@@ -174,6 +176,15 @@ class MainPage extends Component {
 				selectedIntl: this.state.intlList[0].code,
 			}) : null
 	};
+	handleRangeZeroChange = () => {
+		this.setState({rangeZero: !this.state.rangeZero});
+		if (!this.state.rangeZero) {
+			this.setState({rangeContent: "Show scaled Range"})
+		} else {
+			this.setState({rangeContent: "Show Range starting at 0"})
+		}
+		this.handleGraphPopulate();
+	};
 	
   render() {
     return (
@@ -190,6 +201,8 @@ class MainPage extends Component {
 						initializing={this.state.initializing}
 						intlList={this.state.intlList}
 						loading={this.state.loading}
+						rangeContent={this.state.rangeContent}
+						rangeZero={this.state.rangeZero}
 						selectedCrypto={this.state.selectedCrypto}
 						selectedIntl={this.state.selectedIntl}
 						showingExchangeError={this.state.showingExchangeError}
@@ -197,6 +210,7 @@ class MainPage extends Component {
 						handleCryptoChange={this.handleCryptoChange}
 						handleIntlChange={this.handleIntlChange}
 						handleExchangeSearch={this.handleExchangeSearch}
+						handleRangeZeroChange={this.handleRangeZeroChange}
 					/> : <Currencies
 						cryptoList={this.state.cryptoList}
 						intlList={this.state.intlList}

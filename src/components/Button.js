@@ -1,20 +1,8 @@
-/*
-		This is the new button component that I made as a result of adding Radium.  Here I can keep my code 'DRY'
-		by having just one Button component.  I wanted to remove CSS files completely by using Radium for this app
-		and found it to be impossible to not repeat code unless the app is truly reusable with its components.
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Radium from 'radium';
 import RadiumVars from '../RadiumVariables';
 
-/*  Stateless Button components, the button content and methods get passed through props now.  Before each
-		button was configured manually.
-*/
-/*
-		Added the animation style for the button, passed in through props.
- */
 const Button = (props) => {
 	return (
 		<button

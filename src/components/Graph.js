@@ -1,10 +1,3 @@
-/*
-		I added Radium to this component as well.  Small amount of styling is used as the actual graph generated
-		is a canvas object.  I changed some of the styling in the graph options object to make it easier
-		to understand/read for the user.  I originally did not optimize the coloring of the graph information,
-		and now its an overall better experience.
- */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import Radium from 'radium';
@@ -68,6 +61,7 @@ class Graph extends Component {
 							yAxes: [{
 								ticks: {
 									fontColor: "#00ADB5",
+									beginAtZero: this.props.rangeZero
 								},
 								gridLines: {
 									color: "rgba(255, 255, 255, 0.1)"
